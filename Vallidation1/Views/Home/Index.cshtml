@@ -1,0 +1,45 @@
+﻿@model Vallidation1.Models.Employee
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        .field-validation-error{
+            color: red;
+        }
+    </style>
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @*@using (Html.BeginForm("SubmitData","Home",FormMethod.Post))
+        {
+            @Html.TextBox("FirstName") <br />
+            @Html.TextBox("LastName") <br />
+            @Html.TextBox("Email") <br />
+            @Html.TextBox("Dob") <br />
+            <br />
+            <input type="submit" name="btn" value="Submit" />
+        }*@
+
+        <form action="/Home/SubmitData" method="post">
+            <label>First Name: </label>
+            <input id="FirstName" name="FirstName" type="text" value="" /> <br />
+            @Html.ValidationMessage("FirstName") <br />
+            <label>Last Name: </label>
+            <input id="LastName" name="LastName" type="text" value="" /> <br />
+            @Html.ValidationMessage("LastName") <br />
+            <label>Email: </label>
+            <input id="Email" name="Email" type="text" value="" /> <br />
+            @Html.ValidationMessage("Email") <br />
+            <label>Date of Birth: </label>
+            <input id="Dob" name="Dob" type="date" value="" /> <br />
+            @Html.ValidationMessage("Dob") <br />
+            <br />
+            <input type="submit" name="btn" value="Submit" />
+        </form>
+    </div>
+</body>
+</html>
